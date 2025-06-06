@@ -15,21 +15,35 @@
         <h1>Dashboard</h1>
         <div name="notes-preview-section" id="notes-preview-section">
             <div id="search-and-create-section">
-                <input type="text" name="tag-search-bar" id="tag-search-bar" placeholder="Search Names..."
+                <input type="text" name="tag-search-bar" id="tag-search-bar" list="recent-search-inputs" placeholder="Search Names..."
                     spellcheck="false">
-                <datalist name="recent-search-inputs" id="recent-search-inputs"></datalist>
+                <datalist name="recent-search-inputs" id="recent-search-inputs">
+                    <option value="science"></option>
+                </datalist>
 
                 <button name="create-note-button" id="create-note-button" class="has-transition">Create</button>
             </div>
             <div name="notes-preview-cards-container" id="notes-preview-cards-container">
                 <div name="note-preview-card" class="note-preview-card has-transition">
-                        <h3 name="note-name" class="note-name">Name The Do That saw you play football</h3>
-                        <p name="note-content-preview" class="note-content-preview">Gallery But How did you do that i
-                    <button name="delete-note-button" class="delete-note-button has-transition">Delete</button>
+                    <button name="note-delete-button" class="note-delete-button has-transition" >Delete</button>
+                    <h3 name="note-name" class="note-name">Name The Do That saw you play football</h3>
+                    <p name="note-content-preview" class="note-content-preview">Gallery But How did you do that i</p>
                 </div>
-                <div name="note-preview-card" class="note-preview-card has-transition"></div>
-                <div name="note-preview-card" class="note-preview-card has-transition"></div>
-                <div name="note-preview-card" class="note-preview-card has-transition"></div>
+                <div name="note-preview-card" class="note-preview-card has-transition">
+                    <button name="note-delete-button" class="note-delete-button has-transition" >Delete</button>
+                    <h3 name="note-name" class="note-name">Name The Do That saw you play football</h3>
+                    <p name="note-content-preview" class="note-content-preview">Gallery But How did you do that i</p>
+                </div>
+                <div name="note-preview-card" class="note-preview-card has-transition">
+                    <button name="note-delete-button" class="note-delete-button has-transition" >Delete</button>
+                    <h3 name="note-name" class="note-name">Name The Do That saw you play football</h3>
+                    <p name="note-content-preview" class="note-content-preview">Gallery But How did you do that i</p>
+                </div>
+                <div name="note-preview-card" class="note-preview-card has-transition">
+                    <button name="note-delete-button" class="note-delete-button has-transition" >Delete</button>
+                    <h3 name="note-name" class="note-name">Name The Do That saw you play football</h3>
+                    <p name="note-content-preview" class="note-content-preview">Gallery But How did you do that i</p>
+                </div>
             </div>
         </div>
     </div>
