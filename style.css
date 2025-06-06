@@ -1,10 +1,11 @@
 :root{
     --text-colour: #2D3142;
+    --button-background-colour: #99C1B9;
     --font-family: Arial, Helvetica, sans-serif;
-    --background-colour: #3587A4;
+    --background-colour: #CADBC0;
 
 
-    --notes-container-background: #2D848A;
+    --notes-container-background: #F4A698;
     --notes-container-text-colour: #FFFFFF;
     --notes-overview-items-background: #2D3142;
 }
@@ -19,6 +20,19 @@ h1{
     margin-bottom: 0.5vw;
 }
 
+button{
+    background-color: var(--button-background-colour);
+    border-radius: calc(1vw + 1vh/2);
+    border: black dashed 2px;
+
+    cursor: pointer;
+}
+button:hover{
+    border-style: solid;
+    background-color: var(--text-colour);
+    color:  var(--button-background-colour);
+}
+
 #everything{
     max-width: clamp(350px, 450px, 500pxs);
     height: 100vh;
@@ -27,13 +41,13 @@ h1{
     font-family: var(--font-family);
 }
 
-#notes-overview-section{
+#notes-preview-section{
     width: 100%;
     height: 60%;
 
     background-color: var(--notes-container-background);
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.4);
-    border-radius: 1vw;
+    border: black dashed 3px;
+    border-radius: calc(1vw + 1vh/2);
 
     display: flex;
     flex-direction: column;
@@ -41,16 +55,51 @@ h1{
     padding: 1% 2%;
 }
 
+#search-and-create-section{
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 2%;
+}
 
 #tag-search-bar{
     border-style: none;
     outline: none;
 
-    border-radius: 1vw;
+    border-radius: calc(1vw + 1vh/2);
     padding: 0.5% 1%;
 
     background-color: var(--notes-overview-items-background);
     color: var(--notes-container-text-colour);
 
     font-family: var(--font-family);
+}
+
+
+#notes-preview-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+
+    gap: 0 2vw;
+
+    padding: 2vh 0;
+}
+.notes-preview-card{
+    height: 25%;
+    width: 15%;
+
+    border-radius: calc(1vw + 1vh/2);
+    background-color: var(--notes-overview-items-background);
+}
+.notes-preview-card:hover{
+    flex-grow: 2;
+}
+
+
+
+/* utility classes */
+.has-transition{
+    transition-property: all;
+    transition-duration: 0.3s;
 }
