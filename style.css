@@ -113,7 +113,7 @@ button:hover{
 }
 
 .note-name-preview,.note-content-preview{
-    max-width: 70%;
+    max-width: 100%;
 
     overflow: hidden;
     white-space: nowrap;
@@ -121,8 +121,8 @@ button:hover{
 
     position: relative;
 }
-.note-name-preview{font-size: 1.4em; margin-bottom: 5%;}
-.note-content-preview{opacity: 0.7; font-size: smaller;}
+.note-name-preview{font-size: 1.2em; margin-bottom: 5%;}
+.note-content-preview{opacity: 0.7; font-size: 0.7em;}
 
 .note-delete-button{
     display: inline;
