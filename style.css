@@ -34,11 +34,13 @@ button:hover{
 }
 
 #everything{
-    max-width: clamp(350px, 450px, 500pxs);
+    width: clamp(60vw, 70vw, 80vw);
     height: 100vh;
     padding: 6vh 10vw;
 
     font-family: var(--font-family);
+
+    margin: 0 auto;
 }
 
 #notes-preview-section, #note-content-input{
