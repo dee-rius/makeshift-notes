@@ -24,6 +24,9 @@ noteNameInput.addEventListener("change", storeChanges);
 noteContentInput.addEventListener("change", storeChanges);
 
 function storeChanges(){
+    noteNameInput.value = noteNameInput.value.replaceAll("--", "—");
+    noteContentInput.value = noteContentInput.value.replaceAll("--", "—");
+
     let newNoteInfoStored = false;
     let newNoteInfo = {
         noteName: "",

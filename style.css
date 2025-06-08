@@ -1,7 +1,7 @@
 :root{
     --text-colour: #2D3142;
     --button-background-colour: #99C1B9;
-    --font-family: Arial, Helvetica, sans-serif;
+    --font-family:"Edu SA Hand", cursive;
     --background-colour: #CADBC0;
 
 
@@ -151,12 +151,12 @@ button:hover{
 /* for the note-edit file */
 textarea{
     resize: none;
-    /* field-sizing: content; */
-    padding: 0;
-
     outline: none;
+    padding: 0;
+    field-sizing: content;
 
-    height: 1.2em;
+    font-family: var(--font-family);
+    color: var(--text-colour)
 }
 
 nav{
@@ -171,8 +171,12 @@ nav{
     padding: 0;
     border: none;
 
+    height: 1.9em;
+    font-size: 1.9em;
+
     background-color: transparent;
+    font-weight: bolder;
 }
 #note-content-input{
-    font-size: 1.15em;
+    font-size: 1em;
 }
