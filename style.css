@@ -1,3 +1,13 @@
+@keyframes note-preview-card-exit{
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        width: 0;
+    }
+}
+
 :root{
     --text-colour: #2D3142;
     --button-background-colour: #99C1B9;
@@ -136,6 +146,7 @@ button:hover{
     position: absolute;
     left: 0;
     top: 0;
+    z-index: 1;
 
     transform: translateY(-0.5em) translateX(-0.3em);
 }
@@ -145,6 +156,9 @@ button:hover{
 .has-transition{
     transition-property: all;
     transition-duration: 0.3s;
+}
+.preview-card-exit{
+   animation: note-preview-card-exit 0.3s ease-out 0 1 forwards normal;
 }
 
 
