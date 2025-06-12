@@ -4,7 +4,7 @@
     }
     100%{
         opacity: 0;
-        width: 0;
+        width: 0%;
     }
 }
 
@@ -34,8 +34,6 @@ button{
     background-color: var(--button-background-colour);
     border-radius: 1em;
     border: var(--text-colour) dashed 0.15em;
-
-    cursor: pointer;
 }
 button:hover{
     border-style: solid;
@@ -115,17 +113,15 @@ button:hover{
 
     color: var(--notes-container-text-colour);
 
-    cursor: pointer;
-
     position: relative;
 
     flex-grow: 1;
-
 }
 
-.note-preview-card:hover{
+.note-preview-card:has(.click-to-open-note-div:hover){
     flex-grow: 3;
 }
+
 .note-preview-card:hover .note-name-preview{margin: 1.2em 0 1.2em 0;}
 
 .note-name-preview,.note-content-preview{
@@ -158,9 +154,16 @@ button:hover{
     transition-duration: 0.3s;
 }
 .preview-card-exit{
-   animation: note-preview-card-exit 0.3s ease-out 0 1 forwards normal;
+   animation-name: note-preview-card-exit;
+   animation-duration: 0.25s;
+   animation-timing-function: linear;
+   animation-fill-mode: forwards;
+   animation-direction: 1;
 }
 
+.clickable{
+    cursor: pointer;
+}
 
 /* for the note-edit file */
 textarea{

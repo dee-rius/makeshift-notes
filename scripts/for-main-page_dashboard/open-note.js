@@ -1,4 +1,4 @@
-const notePreviewCards = document.getElementsByClassName("note-preview-card");
+const clickToOpenNoteDivs = document.getElementsByClassName("click-to-open-note-div");
 let storedNoteInfos = [];
 let openedNoteInfo = {};
 
@@ -10,8 +10,8 @@ function getNoteInfos(){
     openedNoteInfo = JSON.parse(localStorage.getItem("opened-note"));
 }
 
-for(let notePreviewCard of notePreviewCards){
-    notePreviewCard.addEventListener("click", openNote);
+for(let clickToOpenNoteDiv of clickToOpenNoteDivs){
+    clickToOpenNoteDiv.addEventListener("click", openNote);
 }
 
 function openNote(){

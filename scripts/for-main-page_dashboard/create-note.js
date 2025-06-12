@@ -1,5 +1,5 @@
-const noteButton = document.getElementById("create-note-button");
-noteButton.addEventListener("click", createAndStoreNote);
+const noteCreateButton = document.getElementById("create-note-button");
+noteCreateButton.addEventListener("click", createAndStoreNote);
 
 if(localStorage.getItem("stored-notes") !== null){
     let retrievedNotes = JSON.parse(localStorage.getItem("stored-notes"));
@@ -37,8 +37,12 @@ function createNotePreviewCard(noteName, noteContent){
 
    let notePreviewCardDeleteButton = document.createElement("button");
    notePreviewCardDeleteButton.name = "note-delete-button";
-   notePreviewCardDeleteButton.classList.add(notePreviewCardDeleteButton.name, "has-transition");
+   notePreviewCardDeleteButton.classList.add(notePreviewCardDeleteButton.name, "has-transition", "clickable");
    notePreviewCardDeleteButton.textContent = "Delete";
+
+   let clickToOpenNoteDiv = document.createElement("div");
+   clickToOpenNoteDiv.name = "click-to-open-note-div";
+   clickToOpenNoteDiv.classList.add(clickToOpenNoteDiv.name, "clickable")
 
    let notePreviewCardNameText = document.createElement("h3");
    notePreviewCardNameText.name = "note-name-preview";
@@ -50,7 +54,8 @@ function createNotePreviewCard(noteName, noteContent){
    notePreviewCardContentText.classList.add(notePreviewCardContentText.name);
    notePreviewCardContentText.textContent = noteContent;
 
-   notePreviewCard.append(notePreviewCardDeleteButton, notePreviewCardNameText, notePreviewCardContentText);
+   clickToOpenNoteDiv.append(notePreviewCardNameText, notePreviewCardContentText);
+   notePreviewCard.append(notePreviewCardDeleteButton, clickToOpenNoteDiv);
 
    document.getElementById("notes-preview-cards-container").appendChild(notePreviewCard);
 }

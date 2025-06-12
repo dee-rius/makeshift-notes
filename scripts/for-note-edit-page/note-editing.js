@@ -39,7 +39,13 @@ function storeChanges(){
     else{
         newNoteInfo.noteName = noteNameInput.value;
     }
-    newNoteInfo.noteContent = noteContentInput.value;
+    
+    if(noteContentInput.value == ""){
+        newNoteInfo.noteContent = "...";
+    }
+    else{
+        newNoteInfo.noteContent = noteContentInput.value;
+    }
 
     for(let storedNoteInfo of storedNoteInfos){
         if(newNoteInfoStored === false && storedNoteInfo.noteName == openedNoteInfo.noteName && storedNoteInfo.noteContent == openedNoteInfo.noteContent){
