@@ -1,3 +1,19 @@
+@keyframes everything-enter{
+    0%{
+        transform: translateY(-1.2em);
+        opacity: 0;
+        gap: 0;
+    }
+    40%{
+        gap: 1em;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+        gap: 0;
+    }
+}
+
 @keyframes note-preview-card-exit{
     80%{
         opacity: 1;
@@ -13,6 +29,7 @@
 
 :root{
     --text-colour: #2D3142;
+    --selection-colour: #AE93CD;
     --button-background-colour: #99C1B9;
     --font-family:"Edu SA Hand", cursive;
     --background-colour: #CADBC0;
@@ -52,6 +69,15 @@ button:hover{
     font-family: var(--font-family);
 
     margin: 0 auto;
+
+    display: flex; 
+    flex-direction: column;
+
+    animation-name: everything-enter;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+    animation-direction: 1;
 }
 
 #notes-preview-section, #note-content-input{
