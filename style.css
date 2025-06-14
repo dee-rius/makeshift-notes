@@ -86,7 +86,7 @@ h1,
 button {
     background-color: var(--button-background-colour);
     border-radius: 1em;
-    border: var(--text-colour) dashed 0.15em;
+    border: var(--text-colour) dashed 0.13em;
 }
 
 button:hover {
@@ -180,6 +180,7 @@ button:hover {
     position: relative;
 
     flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .note-preview-card:has(.click-to-open-note-div:hover) {
