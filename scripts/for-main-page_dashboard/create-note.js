@@ -18,7 +18,7 @@ function createAndStoreNote(){
 
     let noteInfo = {
         noteName: "New Note",
-        noteContent: "",
+        noteContent: "...",
     };
 
     retrievedNotes.push(noteInfo);

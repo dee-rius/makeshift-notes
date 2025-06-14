@@ -17,7 +17,12 @@ else{
     noteNameInput.value = openedNoteInfo.noteName;
 }
 
-noteContentInput.value = openedNoteInfo.noteContent;
+if(openedNoteInfo.noteContent == "..."){
+    noteContentInput.value = "";
+}
+else{
+    noteContentInput.value = openedNoteInfo.noteContent;
+}
 
 
 noteNameInput.addEventListener("change", storeChanges);
