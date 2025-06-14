@@ -1,67 +1,101 @@
-@keyframes everything-enter{
-    0%{
+@keyframes everything-enter {
+    0% {
         transform: translateY(-1.2em);
         opacity: 0;
         gap: 0;
     }
-    40%{
-        gap: 1em;
+
+    40% {
+        gap: 0.8em;
     }
-    100%{
+
+    100% {
         transform: translateY(0);
         opacity: 1;
         gap: 0;
     }
 }
 
-@keyframes note-preview-card-exit{
-    80%{
+@keyframes note-preview-card-exit {
+    80% {
         opacity: 1;
+        border-radius: 1em;
     }
-    100%{
+
+    100% {
         opacity: 0;
         width: 0%;
         padding: 0;
         margin: 0;
         display: none;
+        border-radius: 0;
     }
 }
 
-:root{
+@keyframes note-preview-card-enter {
+    80% {
+        opacity: 0;
+        width: 0%;
+        padding: 0;
+        display: none;
+
+    }
+
+    100% {
+        opacity: 1;
+        width: 15%;
+        padding: 0 2%;
+        display: flex;
+    }
+}
+
+:root {
     --text-colour: #2D3142;
-    --selection-colour: #AE93CD;
     --button-background-colour: #99C1B9;
-    --font-family:"Edu SA Hand", cursive;
-    --background-colour: #CADBC0;
+    --font-family: "Edu SA Hand", cursive;
+    --background-colour: #D5C6E0;
+    --selection-color: #192A51;
 
 
-    --notes-container-background: #F4A698;
+    --notes-container-background: #AAA1C8;
     --notes-container-text-colour: #FFFFFF;
     --notes-overview-items-background: #2D3142;
 }
 
-body{
+::selection{
+    background-color: var(--selection-color);
+    color: white;
+}
+
+::-moz-selection{
+    background-color: var(--selection-color);
+    color: white;
+}
+
+body {
     background: var(--background-colour);
     color: var(--text-colour);
 }
 
-h1,#note-name-input{
+h1,
+#note-name-input {
     font-size: 2.5em;
     margin-bottom: 0.4em;
 }
 
-button{
+button {
     background-color: var(--button-background-colour);
     border-radius: 1em;
     border: var(--text-colour) dashed 0.15em;
 }
-button:hover{
+
+button:hover {
     border-style: solid;
     background-color: var(--text-colour);
-    color:  var(--button-background-colour);
+    color: var(--button-background-colour);
 }
 
-#everything{
+#everything {
     width: clamp(60vw, 70vw, 80vw);
     height: 100vh;
     padding: 6vh 10vw;
@@ -70,17 +104,18 @@ button:hover{
 
     margin: 0 auto;
 
-    display: flex; 
+    display: flex;
     flex-direction: column;
 
     animation-name: everything-enter;
-    animation-duration: 0.5s;
+    animation-duration: 0.4s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
     animation-direction: 1;
 }
 
-#notes-preview-section, #note-content-input{
+#notes-preview-section,
+#note-content-input {
     width: 100%;
     height: 60%;
 
@@ -94,14 +129,14 @@ button:hover{
     padding: 2% 2% 5% 2%;
 }
 
-#search-and-create-section{
+#search-and-create-section {
     display: flex;
     justify-content: space-between;
 
     margin-bottom: 2%;
 }
 
-#tag-search-bar{
+#note-search-input {
     border-style: none;
     outline: none;
 
@@ -115,7 +150,7 @@ button:hover{
 }
 
 
-#notes-preview-cards-container{
+#notes-preview-cards-container {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
@@ -132,7 +167,7 @@ button:hover{
     position: relative;
 }
 
-.note-preview-card{
+.note-preview-card {
     height: 30%;
     width: 15%;
     padding: 0 2%;
@@ -147,13 +182,16 @@ button:hover{
     flex-grow: 1;
 }
 
-.note-preview-card:has(.click-to-open-note-div:hover){
+.note-preview-card:has(.click-to-open-note-div:hover) {
     flex-grow: 3;
 }
 
-.note-preview-card:hover .note-name-preview{margin: 1.2em 0 1.2em 0;}
+.note-preview-card:hover .note-name-preview {
+    margin: 1.2em 0 1.2em 0;
+}
 
-.note-name-preview,.note-content-preview{
+.note-name-preview,
+.note-content-preview {
     max-width: 100%;
 
     overflow: hidden;
@@ -162,10 +200,18 @@ button:hover{
 
     position: relative;
 }
-.note-name-preview{font-size: 1.2em; margin: 1.2em 0 0.5em 0;}
-.note-content-preview{opacity: 0.7; font-size: 0.7em;}
 
-.note-delete-button{
+.note-name-preview {
+    font-size: 1.2em;
+    margin: 1.2em 0 0.5em 0;
+}
+
+.note-content-preview {
+    opacity: 0.7;
+    font-size: 0.7em;
+}
+
+.note-delete-button {
     display: inline;
 
     position: absolute;
@@ -178,24 +224,34 @@ button:hover{
 
 
 /* utility classes */
-.has-transition{
+.has-transition {
     transition-property: all;
     transition-duration: 0.3s;
 }
-.preview-card-exit{
-   animation-name: note-preview-card-exit;
-   animation-duration: 0.25s;
-   animation-timing-function: linear;
-   animation-fill-mode: forwards;
-   animation-direction: 1;
-}
 
-.clickable{
+.clickable {
     cursor: pointer;
 }
 
+/*animation*/
+.preview-card-exit {
+    animation-name: note-preview-card-exit;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-direction: 1;
+}
+
+.preview-card-enter {
+    animation-name: note-preview-card-enter;
+    animation-duration: 0.25s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-direction: 1;
+}
+
 /* for the note-edit file */
-textarea{
+textarea {
     resize: none;
     outline: none;
     padding: 0;
@@ -205,15 +261,16 @@ textarea{
     color: var(--text-colour)
 }
 
-nav{
+nav {
     display: flex;
     justify-content: flex-end;
 }
-#to-dashboard-button{
+
+#to-dashboard-button {
     margin-right: auto;
 }
 
-#note-name-input{
+#note-name-input {
     padding: 0;
     border: none;
 
@@ -223,6 +280,7 @@ nav{
     background-color: transparent;
     font-weight: bolder;
 }
-#note-content-input{
+
+#note-content-input {
     font-size: 1em;
 }

@@ -15,10 +15,9 @@
         <h1>Dashboard</h1>
         <div name="notes-preview-section" id="notes-preview-section">
             <div id="search-and-create-section">
-                <input type="text" name="tag-search-bar" id="tag-search-bar" list="recent-search-inputs" placeholder="Search Names..."
+                <input type="text" name="note-search-input" id="note-search-input" list="past-search-inputs-data-list" placeholder="Search for notes..."
                     spellcheck="false">
-                <datalist name="recent-search-inputs" id="recent-search-inputs">
-                    <option value="science"></option>
+                <datalist name="past-search-inputs" id="past-search-inputs-data-list">
                 </datalist>
 
                 <button name="create-note-button" id="create-note-button" class="has-transition">Create</button>
@@ -30,6 +29,7 @@
     <script name="create-note" src="scripts/for-main-page_dashboard/create-note.js"></script>
     <script name="open-note" src="scripts/for-main-page_dashboard/open-note.js"></script>
     <script name="quick-delete-note" src="scripts/for-main-page_dashboard/quick-delete-note.js"></script>
+    <script name="note-searching" src="scripts/for-main-page_dashboard/note-search.js"></script>
 </body>
 
 </html>
