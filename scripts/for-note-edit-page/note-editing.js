@@ -43,6 +43,7 @@ function storeChanges(){
 
     if(noteNameInput.value == ""){
         newNoteInfo.noteName = "New Note";
+        pageTitle.textContent = "New Note";
     }
     else{
         newNoteInfo.noteName = noteNameInput.value;
