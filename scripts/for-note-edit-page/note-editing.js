@@ -1,3 +1,4 @@
+const pageTitle = document.querySelector("title");
 const noteNameInput = document.getElementById("note-name-input");
 const noteContentInput = document.getElementById("note-content-input");
 
@@ -12,9 +13,11 @@ function getNoteInfos(){
 
 if(openedNoteInfo.noteName == "New Note" || openedNoteInfo.noteName == ""){
     noteNameInput.value = "";
+    pageTitle.textContent = "New Note";
 }
 else{
     noteNameInput.value = openedNoteInfo.noteName;
+    pageTitle.textContent = openedNoteInfo.noteName;
 }
 
 if(openedNoteInfo.noteContent == "..."){
@@ -43,6 +46,8 @@ function storeChanges(){
     }
     else{
         newNoteInfo.noteName = noteNameInput.value;
+        //updates page title as well
+        pageTitle.textContent = noteNameInput.value;
     }
     
     if(noteContentInput.value == ""){
