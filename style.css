@@ -188,6 +188,9 @@ button:hover {
     #notes-preview-cards-container {
         flex-direction: column;
     }
+    .note-preview-card {
+        width: 90%;
+    }
 }
 
 .note-preview-card:has(.click-to-open-note-div:hover) {
