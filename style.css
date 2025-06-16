@@ -154,6 +154,7 @@ button:hover {
     display: flex;
     flex-wrap: wrap;
     align-content: flex-start;
+    flex-direction: row;
 
     flex-grow: 1;
 
@@ -183,8 +184,8 @@ button:hover {
     flex-shrink: 0;
 }
 
-@media screen and (max-width: 600px) {
-    .note-preview-card {
+@media (max-width: 600px) and (orientation: portrait) {
+    #notes-preview-cards-container {
         flex-direction: column;
     }
 }
