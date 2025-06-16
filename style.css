@@ -126,14 +126,14 @@ button:hover {
     display: flex;
     flex-direction: column;
 
-    padding: 2% 2% 5% 2%;
+    padding: 1em 1em 2em 1em;
 }
 
 #search-and-create-section {
     display: flex;
     justify-content: space-between;
 
-    margin-bottom: 2%;
+    margin-bottom: 1em;
 }
 
 #note-search-input {
@@ -141,7 +141,7 @@ button:hover {
     outline: none;
 
     border-radius: 1em;
-    padding: 0.5% 1%;
+    padding: 0.25em 0.5em;
 
     background-color: var(--notes-overview-items-background);
     color: var(--notes-container-text-colour);
@@ -170,7 +170,7 @@ button:hover {
 .note-preview-card {
     height: 30%;
     width: 15%;
-    padding: 0 2%;
+    padding: 0 1em;
 
     border-radius: 1em;
     background-color: var(--notes-overview-items-background);
@@ -181,6 +181,12 @@ button:hover {
 
     flex-grow: 1;
     flex-shrink: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .note-preview-card {
+        flex-direction: column;
+    }
 }
 
 .note-preview-card:has(.click-to-open-note-div:hover) {

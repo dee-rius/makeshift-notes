@@ -13,7 +13,7 @@ function getNoteInfos(){
 
 if(openedNoteInfo.noteName == "New Note" || openedNoteInfo.noteName == ""){
     noteNameInput.value = "";
-    pageTitle.textContent = "New Note";
+    pageTitle.textContent = noteNameInput.placeholder;
 }
 else{
     noteNameInput.value = openedNoteInfo.noteName;
@@ -42,8 +42,8 @@ function storeChanges(){
     }
 
     if(noteNameInput.value == ""){
-        newNoteInfo.noteName = "New Note";
-        pageTitle.textContent = "New Note";
+        newNoteInfo.noteName = noteNameInput.placeholder;
+        pageTitle.textContent = noteNameInput.placeholder;
     }
     else{
         newNoteInfo.noteName = noteNameInput.value;
