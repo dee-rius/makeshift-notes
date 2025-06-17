@@ -7,7 +7,6 @@ getNoteInfos();
 
 function getNoteInfos(){
     storedNoteInfos = JSON.parse(localStorage.getItem("stored-notes"));
-    openedNoteInfo = JSON.parse(localStorage.getItem("opened-note"));
 }
 
 for(let clickToOpenNoteDiv of clickToOpenNoteDivs){
@@ -21,7 +20,7 @@ function openNote(){
     let notePreviewCardContentText = this.querySelector(".note-content-preview");
 
     for(let storedNoteInfo of storedNoteInfos){
-        if(foundNote == false && storedNoteInfo.noteName == notePreviewCardNameText.textContent && storedNoteInfo.noteContent == notePreviewCardContentText.textContent){
+        if(foundNote == false && storedNoteInfo.noteName == notePreviewCardNameText.value && storedNoteInfo.noteContent == notePreviewCardContentText.value){
             openedNoteInfo.noteName = storedNoteInfo.noteName;
             openedNoteInfo.noteContent = storedNoteInfo.noteContent;
             foundNote = true;

@@ -11,21 +11,15 @@ function getNoteInfos(){
     storedNoteInfos = JSON.parse(localStorage.getItem("stored-notes"));
 }
 
-if(openedNoteInfo.noteName == "New Note" || openedNoteInfo.noteName == ""){
-    noteNameInput.value = "";
+if(openedNoteInfo.noteName == ""){
     pageTitle.textContent = noteNameInput.placeholder;
 }
 else{
-    noteNameInput.value = openedNoteInfo.noteName;
     pageTitle.textContent = openedNoteInfo.noteName;
 }
 
-if(openedNoteInfo.noteContent == "..."){
-    noteContentInput.value = "";
-}
-else{
-    noteContentInput.value = openedNoteInfo.noteContent;
-}
+noteNameInput.value = openedNoteInfo.noteName;
+noteContentInput.value = openedNoteInfo.noteContent;
 
 
 noteNameInput.addEventListener("change", storeChanges);
@@ -42,21 +36,15 @@ function storeChanges(){
     }
 
     if(noteNameInput.value == ""){
-        newNoteInfo.noteName = noteNameInput.placeholder;
         pageTitle.textContent = noteNameInput.placeholder;
     }
     else{
-        newNoteInfo.noteName = noteNameInput.value;
-        //updates page title as well
+        //updates page title
         pageTitle.textContent = noteNameInput.value;
     }
     
-    if(noteContentInput.value == ""){
-        newNoteInfo.noteContent = "...";
-    }
-    else{
-        newNoteInfo.noteContent = noteContentInput.value;
-    }
+    newNoteInfo.noteName = noteNameInput.value;
+    newNoteInfo.noteContent = noteContentInput.value;
 
     for(let storedNoteInfo of storedNoteInfos){
         if(newNoteInfoStored === false && storedNoteInfo.noteName == openedNoteInfo.noteName && storedNoteInfo.noteContent == openedNoteInfo.noteContent){

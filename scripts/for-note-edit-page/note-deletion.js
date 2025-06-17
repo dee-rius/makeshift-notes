@@ -10,21 +10,26 @@ Variables already decalared in note-editing.js:
 
 deleteButton.addEventListener("click", deleteThisNote);
 
-function deleteThisNote(){
-    let noteDeleted = false;
-    for(let noteInfo of storedNoteInfos){
+function deleteThisNote() {
+    if (!confirm("This note will be permanently deleted. Would you like to continue?")) {
+        return;
+    }
+    else {
+        let noteDeleted = false;
+        for (let noteInfo of storedNoteInfos) {
 
-        if(noteDeleted === false){
-            if(noteInfo.noteName == noteNameInput.value && noteInfo.noteContent == noteContentInput.value){
-                storedNoteInfos.splice(storedNoteInfos.indexOf(noteInfo), 1);
+            if (noteDeleted === false) {
+                if (noteInfo.noteName == noteNameInput.value && noteInfo.noteContent == noteContentInput.value) {
+                    storedNoteInfos.splice(storedNoteInfos.indexOf(noteInfo), 1);
 
-                noteDeleted = true;
+                    noteDeleted = true;
+                }
             }
         }
+
+        localStorage.setItem("stored-notes", JSON.stringify(storedNoteInfos));
+        localStorage.removeItem("opened-note");
+
+        location.href = "index.html";
     }
-
-    localStorage.setItem("stored-notes", JSON.stringify(storedNoteInfos));
-    localStorage.setItem("opened-note", JSON.stringify({}));
-
-    location.href = "index.html";
 }

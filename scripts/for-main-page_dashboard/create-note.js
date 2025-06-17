@@ -17,8 +17,8 @@ function createAndStoreNote(){
     }
 
     let noteInfo = {
-        noteName: "New Note",
-        noteContent: "...",
+        noteName: "",
+        noteContent: "",
     };
 
     retrievedNotes.push(noteInfo);
@@ -47,12 +47,24 @@ function createNotePreviewCard(noteName, noteContent){
    let notePreviewCardNameText = document.createElement("h3");
    notePreviewCardNameText.name = "note-name-preview";
    notePreviewCardNameText.classList.add(notePreviewCardNameText.name, "has-transition");
-   notePreviewCardNameText.textContent = noteName;
+
+   if(noteName == ""){
+    notePreviewCardNameText.textContent = "New note";
+   }
+   else{
+    notePreviewCardNameText.textContent = noteName;
+   }
+   notePreviewCardNameText.value = noteName;
 
    let notePreviewCardContentText = document.createElement("p");
    notePreviewCardContentText.name = "note-content-preview";
    notePreviewCardContentText.classList.add(notePreviewCardContentText.name);
-   notePreviewCardContentText.textContent = noteContent;
+
+   if(noteContent == ""){
+    notePreviewCardContentText.textContent = "...";
+   }
+   else{notePreviewCardContentText.textContent = noteContent;}
+   notePreviewCardContentText.value = noteContent;
 
    clickToOpenNoteDiv.append(notePreviewCardNameText, notePreviewCardContentText);
    notePreviewCard.append(notePreviewCardDeleteButton, clickToOpenNoteDiv);
