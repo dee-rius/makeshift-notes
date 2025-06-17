@@ -41,7 +41,7 @@ function searchForNotes() {
         }
     }
 
-    if(searchInput.value !== ""){
+    if(searchInput.value !== "" && pastInputValues.includes(searchInput.value) === false){
         pastInputValues.push(searchInput.value);
 
         localStorage.setItem("past-note-search-inputs", JSON.stringify(pastInputValues));

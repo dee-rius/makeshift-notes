@@ -162,8 +162,7 @@ button:hover {
 
     padding: 1em 0;
 
-    overflow: clip;
-    overflow-clip-margin: 0.5em;
+    overflow: hidden;
 
     position: relative;
 }
@@ -187,6 +186,7 @@ button:hover {
 @media (max-width: 600px) and (orientation: portrait) {
     #notes-preview-cards-container {
         flex-direction: column;
+        flex-wrap: nowrap;
     }
     .note-preview-card {
         width: 90%;
