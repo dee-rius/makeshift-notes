@@ -6,12 +6,13 @@ if(localStorage.getItem("current-note-search-input-value") !== null){
     searchInput.value = localStorage.getItem("current-note-search-input-value");
 }
 
-getPastInputValues()
+getPastInputValues();
 function getPastInputValues() {
     if (localStorage.getItem("past-note-search-inputs") !== null) {
         pastInputValues = JSON.parse(localStorage.getItem("past-note-search-inputs"));
     }
 
+    pastSearchInputsDataList.innerHTML = "";
     for(pastInputValue of pastInputValues){
         retreivePastSearchInput(pastSearchInputsDataList, pastInputValue);
     }
@@ -49,4 +50,5 @@ function searchForNotes() {
 
     //didm't json stringify beacuse the value is string
     localStorage.setItem("current-note-search-input-value", searchInput.value);
+    getPastInputValues();
 }
