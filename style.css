@@ -179,8 +179,7 @@ button:hover {
 
     position: relative;
 
-    flex-grow: 1;
-    flex-shrink: 0;
+    flex: 1;
 }
 
 @media (max-width: 600px) and (orientation: portrait) {
@@ -189,7 +188,7 @@ button:hover {
         flex-wrap: nowrap;
     }
     .note-preview-card {
-        width: 90%;
+        width: auto;
     }
 }
 
@@ -230,7 +229,7 @@ button:hover {
     top: 0;
     z-index: 1;
 
-    transform: translateY(-0.5em) translateX(-0.3em);
+    transform: translateY(-0.5em) translateX(-0.05em);
 }
 
 
