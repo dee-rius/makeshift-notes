@@ -37,7 +37,7 @@ function createNotePreviewCard(noteName, noteContent){
 
    let notePreviewCardDeleteButton = document.createElement("button");
    notePreviewCardDeleteButton.name = "note-delete-button";
-   notePreviewCardDeleteButton.classList.add(notePreviewCardDeleteButton.name, "has-transition", "clickable");
+   notePreviewCardDeleteButton.classList.add(notePreviewCardDeleteButton.name, "has-transition");
    notePreviewCardDeleteButton.textContent = "Delete";
 
    let clickToOpenNoteDiv = document.createElement("div");

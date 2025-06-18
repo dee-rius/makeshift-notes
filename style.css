@@ -87,6 +87,8 @@ button {
     background-color: var(--button-background-colour);
     border-radius: 1em;
     border: var(--text-colour) dashed 0.13em;
+
+    cursor: pointer;
 }
 
 button:hover {

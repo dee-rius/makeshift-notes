@@ -1,10 +1,9 @@
 const deleteButton = document.getElementById("delete-button");
 
 /*
-Variables already decalared in note-editing.js:
+Variables already declared in note-editing.js:
 - noteNameInout
 - noteContentInput
-- openedNoteInfo
 -  storedNoteInfo
 */
 
