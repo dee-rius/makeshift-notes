@@ -116,7 +116,7 @@ button:hover {
 
 #notes-preview-section,
 #note-content-input {
-    width: 100%;
+    width: auto;
     height: 60%;
 
     background-color: var(--notes-container-background);
